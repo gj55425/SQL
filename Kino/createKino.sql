@@ -14,3 +14,8 @@ CREATE TABLE IF NOT EXISTS Regisseur (
      Nachname TEXT NOT NULL,
     Geburtsdatum DATE
 );
+
+-- Erstelle die Tabelle "Jahr"
+CREATE TABLE IF NOT EXISTS Erscheinungsjahr (
+    Jahr INTEGER PRIMARY KEY
+);
