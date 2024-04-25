@@ -19,3 +19,4 @@ CREATE TABLE IF NOT EXISTS Regisseur (
 CREATE TABLE IF NOT EXISTS Erscheinungsjahr (
     Jahr INTEGER PRIMARY KEY
 );
+

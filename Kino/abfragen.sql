@@ -13,5 +13,25 @@ LIMIT 1;
 
 --Challenge 3--
 
-DELETE FROM Regisseur WHERE RegisseurID > 5
-SELECT DISTINCT
+SELECT Film.Titel, Regisseur.Vorname, Regisseur.Nachname
+From Film INNER JOIN Regisseur 
+ON Film.RegisseurID =Regisseur.RegisseurID
+Where Regisseur.Nachname = "Scott"
+ORDER BY Regisseur.Nachname;
+
+--Challenge 4--
+SELECT ROUND(AVG(Länge), 0) AS Durchschnittliche_Länge
+FROM Film;
+
+--Challenge 5--
+SELECT R.Vorname, R.Nachname, COUNT(F.FilmID) AS Anzahl_Filme
+FROM Regisseur R
+LEFT JOIN Film F ON R.RegisseurID = F.RegisseurID
+GROUP BY R.RegisseurID;
+
+--Challenge 6--
+SELECT Jahr, COUNT(*) AS Anzahl_Filme
+FROM Film
+GROUP BY Jahr
+ORDER BY Anzahl_Filme DESC
+LIMIT 1
