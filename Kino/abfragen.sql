@@ -2,9 +2,10 @@ SELECT* From Film;
 Select *From Regisseur
 
 --Challenge 1--
-SELECT  DISTINCT Jahr FROM Film
-ORDER BY Jahr
-SELECT MIN (Jahr) AS ältestes_Erscheinungsjahr FROM Film;
+SELECT DISTINCT Jahr
+FROM Film
+WHERE Jahr = (SELECT MIN(Jahr) FROM Film);
+
 
 --Challenge 2--
 SELECT DISTINCT Länge FROM Film
@@ -35,3 +36,14 @@ FROM Film
 GROUP BY Jahr
 ORDER BY Anzahl_Filme DESC
 LIMIT 1
+
+--Challenge 7--(erfunden)
+SELECT *
+FROM Film
+WHERE Titel LIKE 'D%' OR Titel LIKE 'A%';
+
+--Challenge 8--(erfunden)
+SELECT Titel, Jahr, Länge
+FROM Film
+WHERE Jahr BETWEEN 2000 AND 2010
+AND Länge > 100;
